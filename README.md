@@ -51,10 +51,41 @@ Both applications are configured to run with `npm run dev` for development mode.
 - Node.js (recommended version: 18.x or higher)
 - npm or yarn package manager
 
+## Quick Start
+
+After uploading your backend and frontend code:
+
+```bash
+# 1. Run the setup script to check everything
+./setup.sh
+
+# 2. Install dependencies
+./install-deps.sh
+
+# 3. Auto-fix configurations (if needed)
+node fix-config.js
+
+# 4. Check for import issues
+node check-imports.js
+
+# 5. Start developing!
+```
+
+## Helper Scripts
+
+- **`setup.sh`** - Checks project structure and installs dependencies
+- **`install-deps.sh`** - Installs npm packages for backend and frontend
+- **`fix-config.js`** - Auto-fixes package.json and npm scripts
+- **`check-imports.js`** - Scans for import/path issues
+
+## Detailed Setup Guide
+
+See [SETUP_GUIDE.md](./SETUP_GUIDE.md) for comprehensive instructions.
+
 ## Contributing
 
 1. Upload your backend code to the `backend/` directory
 2. Upload your frontend code to the `frontend/` directory
-3. Ensure all imports and paths are correctly configured
-4. Install dependencies in each directory
+3. Run `./setup.sh` to verify and install dependencies
+4. Use helper scripts to auto-fix common issues
 5. Run the applications using `npm run dev`
