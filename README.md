@@ -56,27 +56,24 @@ Both applications are configured to run with `npm run dev` for development mode.
 After uploading your backend and frontend code:
 
 ```bash
-# 1. Run the setup script to check everything
-./setup.sh
+# Option 1: Complete automated setup
+./complete-setup.sh
 
-# 2. Install dependencies
-./install-deps.sh
-
-# 3. Auto-fix configurations (if needed)
-node fix-config.js
-
-# 4. Check for import issues
-node check-imports.js
-
-# 5. Start developing!
+# Option 2: Manual step-by-step
+./setup.sh              # Check structure
+./install-deps.sh       # Install dependencies
+node fix-config.js      # Fix configurations
+node check-imports.js   # Check imports
 ```
 
 ## Helper Scripts
 
+- **`complete-setup.sh`** - Complete automated setup (recommended)
 - **`setup.sh`** - Checks project structure and installs dependencies
 - **`install-deps.sh`** - Installs npm packages for backend and frontend
 - **`fix-config.js`** - Auto-fixes package.json and npm scripts
 - **`check-imports.js`** - Scans for import/path issues
+- **`diagnose.sh`** - Comprehensive diagnostic tool for troubleshooting
 
 ## Detailed Setup Guide
 
