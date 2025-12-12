@@ -15,7 +15,8 @@ const FRONTEND_DIR = path.join(__dirname, 'frontend');
 function fileExists(filePath) {
     try {
         return fs.existsSync(filePath);
-    } catch {
+    } catch (error) {
+        // Ignore errors from invalid paths or permissions
         return false;
     }
 }
@@ -23,7 +24,8 @@ function fileExists(filePath) {
 function readJSON(filePath) {
     try {
         return JSON.parse(fs.readFileSync(filePath, 'utf8'));
-    } catch {
+    } catch (error) {
+        // Return null for invalid JSON or missing files
         return null;
     }
 }

@@ -42,18 +42,18 @@ echo "Backend Configuration:"
 echo "----------------------"
 if [ -f "backend/package.json" ]; then
     echo "package.json found"
-    echo "  Name: $(cat backend/package.json | grep '"name"' | head -1)"
+    echo "  Name: $(grep '"name"' backend/package.json | head -1)"
     echo "  Scripts:"
-    cat backend/package.json | grep -A 5 '"scripts"' | grep -v '"scripts"' | head -5
+    grep -A 5 '"scripts"' backend/package.json | grep -v '"scripts"' | head -5
     echo ""
     
     # Check for common dependencies
     echo "  Common dependencies:"
-    [ ! -z "$(cat backend/package.json | grep '"express"')" ] && echo "    ✓ express" || echo "    - express"
-    [ ! -z "$(cat backend/package.json | grep '"fastify"')" ] && echo "    ✓ fastify" || echo "    - fastify"
-    [ ! -z "$(cat backend/package.json | grep '"cors"')" ] && echo "    ✓ cors" || echo "    - cors"
-    [ ! -z "$(cat backend/package.json | grep '"dotenv"')" ] && echo "    ✓ dotenv" || echo "    - dotenv"
-    [ ! -z "$(cat backend/package.json | grep '"nodemon"')" ] && echo "    ✓ nodemon (dev)" || echo "    - nodemon (dev)"
+    grep -q '"express"' backend/package.json && echo "    ✓ express" || echo "    - express"
+    grep -q '"fastify"' backend/package.json && echo "    ✓ fastify" || echo "    - fastify"
+    grep -q '"cors"' backend/package.json && echo "    ✓ cors" || echo "    - cors"
+    grep -q '"dotenv"' backend/package.json && echo "    ✓ dotenv" || echo "    - dotenv"
+    grep -q '"nodemon"' backend/package.json && echo "    ✓ nodemon (dev)" || echo "    - nodemon (dev)"
 else
     echo "✗ backend/package.json not found"
 fi
@@ -64,17 +64,17 @@ echo "Frontend Configuration:"
 echo "-----------------------"
 if [ -f "frontend/package.json" ]; then
     echo "package.json found"
-    echo "  Name: $(cat frontend/package.json | grep '"name"' | head -1)"
+    echo "  Name: $(grep '"name"' frontend/package.json | head -1)"
     echo "  Scripts:"
-    cat frontend/package.json | grep -A 5 '"scripts"' | grep -v '"scripts"' | head -5
+    grep -A 5 '"scripts"' frontend/package.json | grep -v '"scripts"' | head -5
     echo ""
     
     # Check for common dependencies
     echo "  Common dependencies:"
-    [ ! -z "$(cat frontend/package.json | grep '"react"')" ] && echo "    ✓ react" || echo "    - react"
-    [ ! -z "$(cat frontend/package.json | grep '"vue"')" ] && echo "    ✓ vue" || echo "    - vue"
-    [ ! -z "$(cat frontend/package.json | grep '"vite"')" ] && echo "    ✓ vite" || echo "    - vite"
-    [ ! -z "$(cat frontend/package.json | grep '"react-scripts"')" ] && echo "    ✓ react-scripts" || echo "    - react-scripts"
+    grep -q '"react"' frontend/package.json && echo "    ✓ react" || echo "    - react"
+    grep -q '"vue"' frontend/package.json && echo "    ✓ vue" || echo "    - vue"
+    grep -q '"vite"' frontend/package.json && echo "    ✓ vite" || echo "    - vite"
+    grep -q '"react-scripts"' frontend/package.json && echo "    ✓ react-scripts" || echo "    - react-scripts"
 else
     echo "✗ frontend/package.json not found"
 fi
