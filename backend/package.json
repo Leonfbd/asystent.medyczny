@@ -1,0 +1,16 @@
+{
+  "name": "asystent-medyczny-backend",
+  "version": "1.0.0",
+  "description": "Backend for Medical Assistant",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/index.js",
+    "start": "node src/index.js"
+  },
+  "keywords": ["medical", "assistant", "backend"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {}
+}

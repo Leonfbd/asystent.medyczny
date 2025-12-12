@@ -1,0 +1,17 @@
+{
+  "name": "asystent-medyczny-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Medical Assistant",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "echo 'Frontend dev server - awaiting code upload'",
+    "start": "echo 'Frontend start - awaiting code upload'",
+    "build": "echo 'Frontend build - awaiting code upload'"
+  },
+  "keywords": ["medical", "assistant", "frontend"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {}
+}
